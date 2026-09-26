@@ -6,7 +6,9 @@
 #include "a_star.hpp"
 
 Astar::Astar(map g_map):Grid_map(g_map),
-dir{{0,1,0,-1},{1,0,-1,0}}
+dir{{0, 1, 0, -1, 1, 1, -1, -1},
+    {1, 0, -1, 0, 1, -1, 1, -1}},
+move_cost{10, 10, 10, 10, 14, 14, 14, 14}
 {}
 
 void Astar::initialize_Astar()
@@ -36,7 +38,11 @@ void Astar::initialize_Astar()
 int Astar::Heuristic(const GridPoint &point)
 {
     GridPoint goal = Grid_map.get_goal();
-    return std::abs(goal.row - point.row) + std::abs(goal.col - point.col);
+    int row_distance = std::abs(goal.row - point.row);
+    int col_distance = std::abs(goal.col - point.col);
+    int diagonal_distance = std::min(row_distance, col_distance);
+    int straight_distance = std::max(row_distance, col_distance) - diagonal_distance;
+    return diagonal_distance * 14 + straight_distance * 10;
 }
 
 void Astar::build_path()
@@ -97,7 +103,7 @@ state_of_search Astar::step()
             return state_of_search::success;
         }
 
-        for(int i=0;i<4;i++)
+        for(int i=0;i<8;i++)
         {
             GridPoint next_point{
                 cur_row + dir[0][i],
@@ -108,12 +114,23 @@ state_of_search Astar::step()
             {
                 continue;
             }
+
+            // 斜向移动时，两侧的正交网格必须都可通行，防止路径穿过障碍物夹角。
+            if(dir[0][i] != 0 && dir[1][i] != 0)
+            {
+                GridPoint side_point_1{cur_row + dir[0][i], cur_col};
+                GridPoint side_point_2{cur_row, cur_col + dir[1][i]};
+                if(Grid_map.is_obstacle(side_point_1) || Grid_map.is_obstacle(side_point_2))
+                {
+                    continue;
+                }
+            }
             if(isvisited[next_point.row][next_point.col])
             {
                 continue;
             }
 
-            int new_g = cur_node.g + 1;
+            int new_g = cur_node.g + move_cost[i];
             if(new_g < g_score[next_point.row][next_point.col])
             {
                 g_score[next_point.row][next_point.col] = new_g;

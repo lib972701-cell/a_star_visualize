@@ -20,7 +20,8 @@ class Astar{
         std::vector<std::vector<GridPoint>> path;
         std::vector<GridPoint> shortest_path;
         std::priority_queue<node> openLists;
-        int dir[2][4];
+        int dir[2][8];
+        int move_cost[8];
         GridPoint current_point{-1, -1};
 
         int Heuristic(const GridPoint &point);

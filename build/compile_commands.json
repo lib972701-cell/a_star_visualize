@@ -1,0 +1,26 @@
+[
+{
+  "directory": "/home/robomaster/a_star_algorithm/build",
+  "command": "/usr/bin/c++  -I/home/robomaster/a_star_algorithm/include -isystem /usr/include/opencv4 -std=gnu++17 -o CMakeFiles/a_star.dir/src/main.cpp.o -c /home/robomaster/a_star_algorithm/src/main.cpp",
+  "file": "/home/robomaster/a_star_algorithm/src/main.cpp",
+  "output": "CMakeFiles/a_star.dir/src/main.cpp.o"
+},
+{
+  "directory": "/home/robomaster/a_star_algorithm/build",
+  "command": "/usr/bin/c++  -I/home/robomaster/a_star_algorithm/include -isystem /usr/include/opencv4 -std=gnu++17 -o CMakeFiles/a_star.dir/src/a_star.cpp.o -c /home/robomaster/a_star_algorithm/src/a_star.cpp",
+  "file": "/home/robomaster/a_star_algorithm/src/a_star.cpp",
+  "output": "CMakeFiles/a_star.dir/src/a_star.cpp.o"
+},
+{
+  "directory": "/home/robomaster/a_star_algorithm/build",
+  "command": "/usr/bin/c++  -I/home/robomaster/a_star_algorithm/include -isystem /usr/include/opencv4 -std=gnu++17 -o CMakeFiles/a_star.dir/src/astar_visualizer.cpp.o -c /home/robomaster/a_star_algorithm/src/astar_visualizer.cpp",
+  "file": "/home/robomaster/a_star_algorithm/src/astar_visualizer.cpp",
+  "output": "CMakeFiles/a_star.dir/src/astar_visualizer.cpp.o"
+},
+{
+  "directory": "/home/robomaster/a_star_algorithm/build",
+  "command": "/usr/bin/c++  -I/home/robomaster/a_star_algorithm/include -isystem /usr/include/opencv4 -std=gnu++17 -o CMakeFiles/a_star.dir/src/map.cpp.o -c /home/robomaster/a_star_algorithm/src/map.cpp",
+  "file": "/home/robomaster/a_star_algorithm/src/map.cpp",
+  "output": "CMakeFiles/a_star.dir/src/map.cpp.o"
+}
+]

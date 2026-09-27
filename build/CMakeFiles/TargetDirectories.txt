@@ -1,3 +1,0 @@
-/home/robomaster/a_star_algorithm/build/CMakeFiles/a_star.dir
-/home/robomaster/a_star_algorithm/build/CMakeFiles/edit_cache.dir
-/home/robomaster/a_star_algorithm/build/CMakeFiles/rebuild_cache.dir

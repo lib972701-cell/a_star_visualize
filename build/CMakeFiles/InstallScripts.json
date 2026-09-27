@@ -1,7 +1,0 @@
-{
-	"InstallScripts" : 
-	[
-		"/home/robomaster/a_star_algorithm/build/cmake_install.cmake"
-	],
-	"Parallel" : false
-}

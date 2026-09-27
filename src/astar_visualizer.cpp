@@ -98,11 +98,6 @@ bool AstarVisualizer::show(
     draw_label(goal, "G");
 
     int text_y = grid.get_rows() * cell_size + 28;
-    std::string legend = shortest_path.empty()
-        ? "Blue: expanded   Orange: current   Black: obstacle   Esc: quit"
-        : "Yellow: shortest path   S: start   G: goal   Press any key to close";
-    cv::putText(image, legend, {8, text_y}, cv::FONT_HERSHEY_SIMPLEX,
-                0.43, {40, 40, 40}, 1, cv::LINE_AA);
 
     cv::imshow(window_name, image);
     int key = cv::waitKey(delay_ms);
